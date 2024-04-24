@@ -9,7 +9,8 @@ def SonarScan(sonarServer,projectName,projectDesc,projectPath,branchName){
     
     
     withSonarQubeEnv("${servers[sonarServer]}"){
-        def scannerHome = "/home/jenkins/buildtools/sonar-scanner-3.2.0.1227-linux/"
+        //def scannerHome = "/home/jenkins/buildtools/sonar-scanner-3.2.0.1227-linux/"
+        def scannerHome = "D:/Tools/sonar-scanner-5.0.1.3006-windows"
         //def sonarServer = "http://192.168.1.200:9000"
         def sonarDate = sh  returnStdout: true, script: 'date  +%Y%m%d%H%M%S'
         sonarDate = sonarDate - "\n"
