@@ -8,7 +8,7 @@ def SonarScan(sonarServer,projectName,projectDesc,projectPath,branchName){
     def servers = ["test":"sonarqube-test","prod":"sonarqube-prod"]
     
     
-    withSonarQubeEnv("${servers[sonarServer]}"){
+//    withSonarQubeEnv("${servers[sonarServer]}"){
         //def scannerHome = "/home/jenkins/buildtools/sonar-scanner-3.2.0.1227-linux/"
         def scannerHome = "D:/Tools/sonar-scanner-5.0.1.3006-windows"
         //def sonarServer = "http://192.168.1.200:9000"
@@ -32,7 +32,7 @@ def SonarScan(sonarServer,projectName,projectDesc,projectPath,branchName){
             -Dsonar.java.test.binaries=target/test-classes -Dsonar.java.surefire.report=target/surefire-reports  -Dsonar.branch.name=${branchName} -X
 
         """
-    }
+//    }
     
     //def qg = waitForQualityGate()
     //if (qg.status != 'OK') {
