@@ -26,12 +26,12 @@ def GetProjectStatus(projectName){
     response = HttpReq("GET",apiUrl,'')
     println("Response is : ======= $response")
     println("${response.content}")
-    result = readJSON text: """${response.content}"""
-    //result = response["branches"][0]["status"]["qualityGateStatus"]
+    response = readJSON text: """${response.content}"""
+    result = response["branches"][0]["status"]["qualityGateStatus"]
     
-    //println("Result is : ===== $result")
-    println(result)
-   return result
+    println("Result is : ===== $result")
+    //println(result)
+    return result
     //return response
 }
 
