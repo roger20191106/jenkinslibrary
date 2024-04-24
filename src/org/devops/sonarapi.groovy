@@ -26,13 +26,13 @@ def GetProjectStatus(projectName){
     response = HttpReq("GET",apiUrl,'')
     println("Response is : ======= $response")
     println("${response.content}")
-    response = readJSON text: """${response.content}"""
+    result = readJSON text: """${response.content}"""
     //result = response["branches"][0]["status"]["qualityGateStatus"]
     
     //println("Result is : ===== $result")
-    //println(result)
-   //return result
-    return response
+    println(result)
+   return result
+    //return response
 }
 
 //获取Sonar质量阈状态(多分支)
