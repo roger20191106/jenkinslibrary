@@ -34,10 +34,10 @@ def SonarScan(sonarServer,projectName,projectDesc,projectPath,branchName){
             -Dsonar.java.test.binaries=target/test-classes -Dsonar.java.surefire.report=target/surefire-reports -X
 
         """
-//    }
+    }
     
-    //def qg = waitForQualityGate()
-    //if (qg.status != 'OK') {
-        //error "Pipeline aborted due to quality gate failure: ${qg.status}"
+    def qg = waitForQualityGate()
+    if (qg.status != 'OK') {
+        error "Pipeline aborted due to quality gate failure: ${qg.status}"
     }
 }
